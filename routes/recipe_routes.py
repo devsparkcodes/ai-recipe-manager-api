@@ -66,5 +66,5 @@ def recipe_suggestion(
     ingredients: RecipeSuggestRequest
     ):
     return recipe_service.suggest_recipe_service(
-        ingredients=ingredients
+        ingredients=ingredients.ingredients
     )
