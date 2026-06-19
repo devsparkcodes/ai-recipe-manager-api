@@ -109,6 +109,12 @@ def suggest_recipe_service(ingredients):
 
     cleaned = raw.replace("```json", "").replace("```", "").strip()
 
-    recipe_json = json.loads(cleaned)
+    try:
+        recipe_json = json.loads(cleaned)
+        return recipe_json
 
-    return recipe_json
+    except json.JSONDecodeError:
+        raise HTTPException(
+            status_code=400,
+            detail="Please provide valid ingredients."
+        )
