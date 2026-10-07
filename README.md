@@ -1,161 +1,173 @@
-# 🍳 AI Recipe Manager API
+# AI Recipe Manager API
 
-A modern FastAPI-based backend application that helps users manage recipes and generate AI-powered recipe suggestions using available ingredients.
+A FastAPI-based backend application for managing recipes and generating AI-powered recipe suggestions from available ingredients.
 
----
+## Project Overview
 
-## 🚀 Project Overview
+The AI Recipe Manager API was developed using a Spec-Driven Development approach.
 
-This project was developed using a Spec-Driven Development approach.
+The API provides endpoints for recipe management and AI-powered recipe suggestions using the Groq API.
 
-The API allows users to:
-
-✅ Create recipes
-
-✅ View recipes
-
-✅ Update recipes
-
-✅ Delete recipes
-
-✅ Generate AI recipe suggestions using Groq AI
-
----
-
-## ✨ Features
+## Features
 
 ### Recipe Management
 
-* Create a new recipe
-* Retrieve all recipes
-* Retrieve recipe by ID
-* Update existing recipes
-* Delete recipes
+- Create a new recipe
+- Retrieve all recipes
+- Retrieve a recipe by ID
+- Update an existing recipe
+- Delete a recipe
 
-### AI Recipe Suggestion
+### AI Recipe Suggestions
 
 Generate recipe recommendations based on available ingredients.
 
-Example Input:
+For example, ingredients such as:
 
+```text
 Rice, Chicken, Yogurt
+```
 
-Example Output:
+can be used to generate a recipe suggestion with ingredients and cooking instructions.
 
-Chicken Biryani with ingredients and cooking instructions.
+## How It Works
 
----
+The application provides two main areas of functionality:
 
-## 🏗 Project Architecture
+1. **Recipe Management** — Handles CRUD operations for recipes through FastAPI endpoints.
+2. **AI Recipe Suggestions** — Sends available ingredients to the Groq API and returns an AI-generated recipe suggestion.
 
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Core programming language |
+| FastAPI | Backend framework |
+| SQLModel | Database ORM and data modeling |
+| SQLite | Database |
+| Pydantic | Data validation |
+| Groq API | AI-powered recipe generation |
+| Git & GitHub | Version control and repository management |
+
+## Project Structure
+
+```text
 recipe-manager-api/
-
+│
 ├── routes/
-
 ├── services/
-
 ├── models.py
-
 ├── schemas.py
-
 ├── database.py
-
 ├── config.py
-
 ├── main.py
-
 ├── requirements.txt
-
 ├── .gitignore
-
 └── README.md
+```
 
----
+## API Documentation
 
-## 🛠 Technologies Used
+### Recipe Endpoints
 
-* Python
-* FastAPI
-* SQLModel
-* SQLite
-* Pydantic
-* Groq API
-* Git & GitHub
-
----
-
-## 📚 API Endpoints
-
-### Recipes
-
-POST /recipes
-
-GET /recipes
-
-GET /recipes/{id}
-
-PUT /recipes/{id}
-
-DELETE /recipes/{id}
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/recipes` | Create a new recipe |
+| GET | `/recipes` | Retrieve all recipes |
+| GET | `/recipes/{id}` | Retrieve a recipe by ID |
+| PUT | `/recipes/{id}` | Update a recipe |
+| DELETE | `/recipes/{id}` | Delete a recipe |
 
 ### AI Suggestion
 
-POST /recipes/suggest
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/recipes/suggest` | Generate an AI-powered recipe suggestion |
 
----
+## Getting Started
 
-## ⚙ Installation
+### 1. Clone the Repository
 
-### Clone Repository
-
+```bash
 git clone <repository-url>
+cd recipe-manager-api
+```
 
-### Create Virtual Environment
+### 2. Create a Virtual Environment
 
+```bash
 python -m venv venv
+```
 
-### Activate Environment
+### 3. Activate the Virtual Environment
 
-Windows:
+**Windows:**
 
+```bash
 venv\Scripts\activate
+```
 
-### Install Dependencies
+### 4. Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-### Create .env File
+### 5. Configure Environment Variables
 
+Create a `.env` file and add your Groq API key:
+
+```env
 GROQ_API_KEY=your_api_key
+```
 
-### Run Server
+### 6. Run the Development Server
 
+```bash
 uvicorn main:app --reload
+```
 
----
+The API will be available at:
 
-## 📖 API Documentation
+```text
+http://127.0.0.1:8000
+```
 
-Swagger UI:
+## API Documentation
 
-http://127.0.0.1:8000/docs
+FastAPI provides interactive API documentation at:
 
----
+- Swagger UI: `http://127.0.0.1:8000/docs`
+- ReDoc: `http://127.0.0.1:8000/redoc`
 
-## 🎯 Learning Outcomes
+## Learning Outcomes
 
-This project helped me learn:
+This project helped strengthen practical understanding of:
 
-* FastAPI Development
-* CRUD Operations
-* Dependency Injection
-* Schema Validation
-* SQLModel ORM
-* AI Integration
-* Spec-Driven Development
+- FastAPI development
+- CRUD operations
+- Dependency Injection
+- Schema validation
+- SQLModel ORM
+- SQLite database integration
+- AI API integration
+- Spec-Driven Development
 
----
+## Future Improvements
 
-## 👨‍💻 Author
+Potential future enhancements include:
 
-Muhammad Umar
+- Improved recipe recommendation logic
+- Additional recipe filtering and search functionality
+- More advanced ingredient-based recommendations
+- User authentication and authorization
+- Deployment support
+
+## Author
+
+**Muhammad Umar**
+
+Building practical applications at the intersection of software engineering and AI.
+
+- GitHub: https://github.com/devsparkcodes
+- LinkedIn: https://linkedin.com/in/devsparkcodes
